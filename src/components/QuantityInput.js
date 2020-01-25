@@ -20,7 +20,7 @@ const QuantityInput = props => {
 </div>
     }
         return <div className="alert alert-info text-center" role="alert">
-            Oh no!
+            Almost there
 </div>
     }
 
