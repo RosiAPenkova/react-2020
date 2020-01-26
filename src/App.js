@@ -1,4 +1,7 @@
 import React from 'react';
+import {createStore} from 'redux';
+import reducers from './redux/index';
+import {Provider} from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,7 +13,7 @@ import Users from './pages/Users';
 import Navbar from './components/Navbar';
 
 
-
+const store = createStore(reducers)
 
 const Layout = props => {
 
@@ -28,30 +31,32 @@ const Layout = props => {
 
 function App() {
   return (
-    <Router>
+   <Provider store ={store}>
+      <Router>
   
-      {/* <FunctionalComponent count={1} step={1}/>
-      <FunctionalComponent count={2} step={2}/> */}
-     
-        <Switch>
-          <Route exact path="/">
-          <Layout>
-          <Home />
-          </Layout>
-           
-          </Route>
-          <Route path="/profile">
-          <Layout>
-            <Profile />
-            </Layout>
-          </Route>
-          <Route path="/users">
-          <Layout>
-            <Users />
-            </Layout>
-          </Route>
-        </Switch>
-    </Router>
+  {/* <FunctionalComponent count={1} step={1}/>
+  <FunctionalComponent count={2} step={2}/> */}
+ 
+    <Switch>
+      <Route exact path="/">
+      <Layout>
+      <Home />
+      </Layout>
+       
+      </Route>
+      <Route path="/profile">
+      <Layout>
+        <Profile />
+        </Layout>
+      </Route>
+      <Route path="/users">
+      <Layout>
+        <Users />
+        </Layout>
+      </Route>
+    </Switch>
+</Router>
+   </Provider>
   );
 }
 
