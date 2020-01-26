@@ -1,5 +1,6 @@
 import React from 'react';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 import reducers from './redux/index';
 import {Provider} from 'react-redux';
 import {
@@ -13,7 +14,7 @@ import Users from './pages/Users';
 import Navbar from './components/Navbar';
 
 
-const store = createStore(reducers)
+const store = createStore(reducers, applyMiddleware(thunk))
 
 const Layout = props => {
 

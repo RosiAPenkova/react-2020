@@ -9,8 +9,8 @@ class Home extends React.Component {
         this.state = {
             counts: [1,2,3,4,5],
         }
-        console.log(props.counter);
-        console.log(props.setCounter);
+        // console.log(props.counter);
+        // console.log(props.setCounter);
     }
     getQuantityInputs = () => {
         const counts = this.state.counts;
